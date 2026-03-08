@@ -1,0 +1,291 @@
+/*
+ * Professional CSS for GCEE Civil Engineering Department
+ */
+:root {
+    --primary-color: #004d99; /* Deep Academic Blue */
+    --primary-dark: #002244; /* Darker Navy - Very Professional */
+    --primary-light: #f0f7ff; /* Very Light Blue */
+    --accent-color: #ffc107; /* Academic Gold/Yellow Accent */
+    --accent-hover: #e0a800;
+    --text-color: #333333;
+    --text-muted: #6c757d;
+    --white: #ffffff;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Typography & Colors Utility */
+.text-primary-dark { color: var(--primary-dark) !important; }
+.text-primary { color: var(--primary-color) !important; }
+.text-accent { color: var(--accent-color) !important; }
+.bg-primary-dark { background-color: var(--primary-dark) !important; }
+.bg-primary { background-color: var(--primary-color) !important; }
+.bg-primary-light { background-color: var(--primary-light) !important; }
+.bg-accent { background-color: var(--accent-color) !important; }
+.text-shadow { text-shadow: 2px 2px 5px rgba(0,0,0,0.7); }
+.letter-spacing-1 { letter-spacing: 1px; }
+.line-height-lg { line-height: 1.8; }
+.w-20 { width: 25px; display: inline-block; text-align: center; }
+.max-w-700 { max-width: 700px; }
+.max-w-800 { max-width: 800px; }
+.dashed { border-bottom-style: dashed !important; border-bottom-width: 2px !important; }
+
+/* Background Patterns & Gradients */
+.bg-pattern {
+    background-image: radial-gradient(var(--primary-light) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+/* Base Buttons */
+.btn-accent {
+    background-color: var(--accent-color);
+    color: var(--primary-dark);
+    border: none;
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-hover);
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation */
+.navbar {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgba(0, 34, 68, 0.95) !important;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    border-radius: 6px;
+    transition: all var(--transition-speed);
+}
+
+.navbar-nav .nav-link:hover, 
+.navbar-nav .nav-link.active {
+    color: var(--accent-color) !important;
+    background-color: rgba(255,255,255,0.08);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 85vh;
+    background: url('images/Civil_Dept.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 34, 68, 0.92) 0%, rgba(0, 77, 153, 0.8) 100%);
+    z-index: 1;
+}
+
+.page-title {
+    font-size: 4rem;
+    letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+    .page-title { font-size: 2.5rem; }
+    .hero-section { min-height: 70vh; background-attachment: scroll; }
+}
+
+/* Stats Section */
+.stats-section {
+    margin-top: -60px;
+}
+
+.stat-item h2 {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -2px;
+}
+
+/* Section Common */
+.section-title .underline {
+    height: 4px;
+    width: 60px;
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+/* Hover Animations & Shadows */
+.hover-lift {
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12) !important;
+}
+
+.hover-lift-sm {
+    transition: transform var(--transition-speed) ease;
+}
+
+.hover-lift-sm:hover {
+    transform: translateX(5px);
+}
+
+.hover-zoom {
+    transition: transform 0.6s ease;
+}
+
+.image-wrapper:hover .hover-zoom {
+    transform: scale(1.05);
+}
+
+/* Utilities for lists */
+.icon-box-sm {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* Program Cards */
+.program-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+}
+
+.custom-list-check li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.custom-list-check li::before {
+    content: '\f058';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--primary-color);
+}
+
+.transition-all { transition: all 0.3s ease; }
+.transition-transform { transition: transform 0.3s ease; }
+
+.group:hover .group-hover-bg-primary {
+    background-color: var(--primary-dark) !important;
+    color: white !important;
+}
+
+.group:hover .group-hover-translate-x {
+    transform: translateX(5px);
+}
+
+/* Lab Cards */
+.lab-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.lab-card:hover .lab-icon {
+    background-color: var(--primary-dark) !important;
+    color: white !important;
+    transform: scale(1.1);
+}
+
+/* Faculty Cards */
+.faculty-img-wrapper {
+    margin-bottom: -60px; /* pull down image over body */
+}
+
+.action-btn {
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: white;
+}
+
+/* Activity Cards */
+.activity-box .act-icon {
+    transition: transform 0.4s ease, color 0.3s ease;
+}
+
+.activity-box:hover .act-icon {
+    transform: scale(1.2) rotate(5deg);
+    color: var(--accent-color) !important;
+}
+
+/* Contact Infoboxes */
+.contact-icon-wrapper {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact-info-card:hover .contact-icon-wrapper {
+    transform: translateY(-10px) scale(1.1);
+    background-color: var(--primary-dark) !important;
+    color: white !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Footer Links */
+.footer-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: all var(--transition-speed);
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+/* Scroll Animations */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
