@@ -167,7 +167,7 @@
         // Fetch Initial Data
         async function fetchData() {
             try {
-                const res = await fetch('http://localhost:8000/api/data');
+                const res = await fetch('/api/data');
                 siteData = await res.json();
                 renderNotices();
                 renderEvents();
@@ -181,7 +181,7 @@
         // Save Data to Server
         async function saveData() {
             try {
-                const res = await fetch('http://localhost:8000/api/update', {
+                const res = await fetch('/api/update', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
